@@ -9,21 +9,26 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tb_department")
-public class Department {
-
+@Table(name = "tb_user")
+public class User {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-
-	public Department() {
+	private String email;
+	
+	private Department department;
+	
+	public User() {
 	}
 
-	public Department(Long id, String name) {
+	public User(Long id, String name, String email, Department department) {
 		super();
 		this.id = id;
 		this.name = name;
+		this.email = email;
+		this.department = department;
 	}
 
 	public Long getId() {
@@ -42,9 +47,25 @@ public class Department {
 		this.name = name;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, name);
+		return Objects.hash(id);
 	}
 
 	@Override
@@ -55,8 +76,8 @@ public class Department {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Department other = (Department) obj;
-		return Objects.equals(id, other.id) && Objects.equals(name, other.name);
+		User other = (User) obj;
+		return Objects.equals(id, other.id);
 	}
-
+	
 }
