@@ -1,6 +1,6 @@
 <img align="right" alt="Spring" width="100" src="https://github.com/devicons/devicon/blob/master/icons/spring/spring-original.svg">
 
-# userdept
+# userdept-api
 <h3>User Dept Spring Boot API</h3>
 <br>
 
